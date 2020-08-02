@@ -1,19 +1,17 @@
 $(document).ready(function () {
      "use strict"
-    
+
      $("#btn_Add").on("click", function () {
           add();
           search(); // goi search
      });
-     $('#btn_search').on("click", function () {
-          search();
-     });
-
+  
+    
 });
 
 // add
 function add() {
-         // lay dl tu view
+     // lay dl tu view
      var name = $("#txt_name").val();
      var birthday = $("#txt_birthday").val();
 
@@ -39,7 +37,7 @@ function add() {
 
 //search
 function search() {
-         // lay dl tu view
+     // lay dl tu view
      var name_search = $("#txt_search_name").val();
      $.ajax({
 
@@ -48,13 +46,14 @@ function search() {
           data: { Name: name_search },
           success: function (result) {
                $('#table_student').html(result);
+               //  alert(tt);
 
           }
      });
 }
 // delete
 function delete_user(id) {
-         // lay dl tu onclick
+     // lay dl tu onclick
      var id = id;
      swal({
           title: "Are you sure?",
@@ -65,7 +64,7 @@ function delete_user(id) {
      })
           .then((willDelete) => {
                if (willDelete) {
-//goi ajax
+                    //goi ajax
                     $.ajax({
 
                          url: '../Home/delete_user',
@@ -91,7 +90,7 @@ function delete_user(id) {
 
 //edit
 function edit(id) {
-    // lay dl tu view
+     // lay dl tu view
      document.getElementById("btn_edit" + id).style.display = "none";
      document.getElementById("btn_save" + id).style.display = "block";
 
@@ -115,7 +114,7 @@ function save(id) {
      // lay dl tu view
      var name_val = document.getElementById("name_text" + id).value;
      var birthday_val = document.getElementById("birthday_text" + id).value;
-      // goi ajax
+     // goi ajax
      $.ajax({
 
           url: '../Home/edit',
@@ -140,24 +139,49 @@ function save(id) {
 }
 //search_month
 function search_month() {
-    var search_start=$("#month_start").val();
-    var search_end=$("#month_end").val();
+     var search_start = $("#month_start").val();
+     var search_end = $("#month_end").val();
      // goi ajax
-    $.ajax({
-     url:"../home/search_month",
-     type:"post",
-     data:{Search_start:search_start,Search_end:search_end},
-     success: function (result) {
-          $('#table_student').html(result);
+     $.ajax({
+          url: "../home/search_month",
+          type: "post",
+          data: { Search_start: search_start, Search_end: search_end },
+          success: function (result) {
+               $('#table_student').html(result);
 
-     }
+          }
 
-    })
-    
+     })
+
 }
+function login() {
+     var email = $("#txtEmailDN").val();
+
+     var password = $("#txtPasswordDN").val();
+     $.ajax({
+          url: "../Login/login",
+          type: "post",
+          data: { Email: email, Password: password },
+          success: function (result) {
+            window.location="../home/index";
+          }
+
+     })
+
+}
+function validate() {
+     var email_validate = $("#validate_email").val();
 
 
+     $.ajax({
+          url: "../Login/validate_email",
+          type: "post",
+          data: { Email: email_validate },
+          success: function (result) {
+               swal("success!", "Vui lòng check Mail!");
+          }
 
-
+     })
+}
 
 

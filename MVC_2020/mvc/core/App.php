@@ -2,8 +2,8 @@
 class App{
        // thanh địa chỉ quyết đinh các controller action params
        // class App quyết đinh controller nào hàm nào được hiển thị
-    protected $controller="Home";
-    protected $action="Index";
+    protected $controller="Login";
+    protected $action="index";
     protected $params=[];
 
     function __construct(){

@@ -7,8 +7,9 @@ class Controller{
        return new $model; // tạo mới đối tượng
     }
 
-    public function view($view, $data=[]){
-        require_once "./mvc/views/home/".$view.".php";
+    public function view($layout, $data=[]){
+        require_once "./mvc/views/".$layout.".php"; 
+      
     }
 
 }

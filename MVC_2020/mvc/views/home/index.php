@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-<link rel="stylesheet" href="../public/css/bootstrap.min.css">
-<link rel="stylesheet" href="../public/css/jquery-ui.css">
-
-
-
-<title>Page Title</title>
-
-</head>
-<body>
 <div class="container">
   <div class="row  text-center">
       <div class="col-sm-12 ">
           <h3 >Giao Dien</h3>
+     
       </div>
   
   </div>
@@ -136,25 +124,24 @@
 
 
 <!-- script-->
-<!--
-  
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
--->
+
+<!-- ../ sẽ di chuyển đến thư mục chứa thư mục hiện tại (thư mục cha)-->
+
+<script type="text/javascript" src="../public/js/script.js"></script>
 
 <script type="text/javascript" src="../public/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="../public/js/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="../public/js/jquery-ui.js"></script>
-<script type="text/javascript" src="../public/js/script.js"></script> <!-- lui lai thư mục cha của thư muc views-->
+<script type="text/javascript" src="../public/js/script.js"></script> 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="../public/js/bootstable.min.js"></script>
 
 <script>
   // xuli add
+
   $(document).ready(function(){
-  
+   
     // xu li button add
   $( "#add" ).dialog({ autoOpen: false }); // ẩn add
   $( "#btn_id" ).click(function() {
@@ -163,8 +150,6 @@
   });
   $( "#btn_cancel" ).click(function() {
   $( "#add" ).dialog( "close" ); // ẩn
-
-  
   });
 
 // xuli hien lich
@@ -185,5 +170,3 @@ $( "#edit" ).dialog({ autoOpen: false }); // ẩn add
     }
 });
   </script>
-</body>
-</html>

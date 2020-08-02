@@ -12,8 +12,9 @@ class Home extends Controller{
         $listUser=$add->getUser();
       
         //goi view
-        $this->view("index", [
- 
+        $this->view("layout", [
+            "Page"=>"home",
+               "View"=>"Index",
             "listUser"=>$listUser,
           
         
@@ -46,8 +47,9 @@ function search(){
     $listUser=$add->xuli_search($name);
      
 
-    $this->view("search", [
- 
+    $this->view("layout", [
+        "Page"=>"home",
+        "View"=>"search",
         "listUser"=>$listUser,
     
    ]);
@@ -87,13 +89,17 @@ $add = $this->model("User");
 $listUser=$add->xuli_search_month($Search_start,$Search_end);
 
 
-$this->view("search", [
- 
+$this->view("layout", [
+    "Page"=>"home",
+    "View"=>"search",
     "listUser"=>$listUser,
 
 ]);
 
 }
+
+
+ 
 }
 
 // http://localhost/live/Home/Show/1/2
