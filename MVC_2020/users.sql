@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 26, 2020 lúc 12:20 PM
+-- Thời gian đã tạo: Th8 02, 2020 lúc 05:44 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.6
 
@@ -30,18 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `userName` varchar(100) NOT NULL,
-  `Birthday` date NOT NULL
+  `Birthday` date NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `password` varchar(15) NOT NULL,
+  `token` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`user_id`, `userName`, `Birthday`) VALUES
-(82, 'tinh ', '2020-05-07'),
-(85, 'thao ', '2020-07-16'),
-(86, '  maianh ', '2020-08-15'),
-(88, ' nga ', '2020-07-04');
+INSERT INTO `users` (`user_id`, `userName`, `Birthday`, `email`, `password`, `token`) VALUES
+(99, 'anh ', '2020-07-04', 'taminhthao_t62@hus.edu.vn', 'tathao', 'ff4d5fbbafdf976c'),
+(100, 'thien  ', '1970-01-01', 'taminhthao1410@gmail.com', 'taminhthao@999', 'a4f23670e1833f3f'),
+(101, 'thao', '2020-08-12', '', '', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -61,7 +63,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
